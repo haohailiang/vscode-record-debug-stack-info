@@ -2,7 +2,7 @@
     "name": "record-debug-stack-info",
     "displayName": "record debug stack info",
     "description": "把调试信息打印出来",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "haohailiang",
     "author": {
         "name": "haohailiang",
