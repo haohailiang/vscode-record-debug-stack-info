@@ -34,12 +34,14 @@ export function activate(context: vscode.ExtensionContext) {
         // get workspace relative path
         let relPath = vscode.workspace.asRelativePath(doc.fileName);
 
+        /**
         const activeEditor = vscode.window.activeTextEditor;
         let totalLines = 0;
         if (activeEditor) {
             const doc = activeEditor.document;
             totalLines = (doc.getText().match(/\n/g) || '').length;
         }
+         */
 
         // get cursor line number, zero index so add 1
         let curLineIndex = editor.selection.active.line
@@ -48,8 +50,10 @@ export function activate(context: vscode.ExtensionContext) {
         let next2Line = curLineIndex + 2;
         let curLineContent = editor.document.lineAt(curLineIndex).text
 
-        let copyPathLine = relPath + ':' + cursorLinePos + '\n\t' + curLineContent + '\n';
+        // let copyPathLine = relPath + ':' + cursorLinePos + '\n\t' + curLineContent + '\n';
+        let copyPathLine = relPath + ':' + cursorLinePos + '\n\t' + curLineContent;
 
+        /**
         if (totalLines >= next2Line) {
             let nextLineContent = editor.document.lineAt(nextLine).text
             let next2LineContent = editor.document.lineAt(next2Line).text
@@ -58,6 +62,7 @@ export function activate(context: vscode.ExtensionContext) {
             let nextLineContent = editor.document.lineAt(nextLine).text
             copyPathLine = relPath + ':' + cursorLinePos + '\n\t' + curLineContent + '\n\t' + nextLineContent + '\n';
         }
+         */
 
 
 
