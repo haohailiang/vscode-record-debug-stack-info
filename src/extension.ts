@@ -51,7 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
         let curLineContent = editor.document.lineAt(curLineIndex).text
 
         // let copyPathLine = relPath + ':' + cursorLinePos + '\n\t' + curLineContent + '\n';
-        let copyPathLine = relPath + ':' + cursorLinePos + '\n\t' + curLineContent;
+        let copyPathLine = relPath + ':' + cursorLinePos + '\n\t    ' + curLineContent.trim();
 
         /**
         if (totalLines >= next2Line) {
@@ -74,7 +74,7 @@ export function activate(context: vscode.ExtensionContext) {
         });
     });
 
-    context.subscriptions.push(relPathCopy);
+    // context.subscriptions.push(relPathCopy);
     context.subscriptions.push(relPathAndLineCopy);
 }
 
